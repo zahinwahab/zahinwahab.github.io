@@ -97,7 +97,7 @@
                         My current research interests are in Programming Language and Software Engineering.
                     </p>
                     <p>
-                        I will be applying for PhD in Fall'24.
+                        I will be applying for PhD programmes in Fall'24 session.
                     </p>
                 </div>
             </div>
@@ -133,8 +133,36 @@
                                     Oxford Bioinformatics 2021 </b></a>
                             <br/>               
 
-                            [<a href="#" onclick="$('#bioinfo2021_bib').toggle();return false;">bib</a>]
-                            [<a href="#" onclick="$('#bioinfo2021_abs').toggle();return false;">abstract</a>]
+                            <a href="#" onclick="toggleBib(event); return false;">bib</a>
+                            <a href="#" onclick="toggleAbstract(event); return false;">abstract</a>
+                            
+                            <!-- Your HTML content -->
+                            
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                            <script>
+                                var bibClicked = false;
+                                var abstractClicked = false;
+                            
+                                function toggleBib(event) {
+                                  if (abstractClicked) {
+                                    event.preventDefault();
+                                    abstractClicked = false;
+                                    $('#bioinfo2021_abs').hide();
+                                  }
+                                  bibClicked = !bibClicked;
+                                  $('#bioinfo2021_bib').toggle();
+                                }
+                            
+                                function toggleAbstract(event) {
+                                  if (bibClicked) {
+                                    event.preventDefault();
+                                    bibClicked = false;
+                                    $('#bioinfo2021_bib').hide();
+                                  }
+                                  abstractClicked = !abstractClicked;
+                                  $('#bioinfo2021_abs').toggle();
+                                }
+                              </script>
                             [<a href="https://github.com/Mahim1997/wQFM-2020" target="_blank">code</a>]
                             <div id="bioinfo2021_abs" class="abstract" style="display:none;">
                                 <p>
@@ -158,6 +186,8 @@
                                       }
                                 </pre>
                             </div>
+                           
+                         
                         </li>
                         <br/>
 
@@ -442,19 +472,30 @@ variation using Random Early Detection (RED) queue, Re-transmission Timeout (RTO
                     <h2>Work Experience</h2>
                     <ul>
                         <li>
-                            <b>(July 2021 - Present) Lecturer</b><br/>
+                            <h6 style="text-align:left;">
+                                BRAC University
+                                <span style="float:right;">
+                                    July 2021 - Present
+                                </span>
+                            </h6>
+                            <b>Lecturer</b><br/>
                             Department of Computer Science and Engineering<br/>
-                            BRAC University<br/>
+                            
                             <br/>
                         </li>
 
                         <li>
-                            <b>(February 2021 - June 2021) Lecturer</b><br/>
+                            <h6 style="text-align:left;">
+                                United International University
+                                <span style="float:right;">
+                                    Feb 2021 - June 2021
+                                </span>
+                            </h6>
+                            <b>Lecturer</b><br/>
                             Department of Computer Science and Engineering<br/>
-                            United International University (UIU)<br/>
+                            
                             <br/>
                         </li>
-                        
                        
                     </ul>
                 </div>

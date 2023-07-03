@@ -28,3 +28,5 @@ $(document).ready(function() {
     });
 	
 });
+
+// Function to toggle the 'bioinfo2021_bib' element
