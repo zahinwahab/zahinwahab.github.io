@@ -133,37 +133,43 @@
                                     Oxford Bioinformatics 2021 </b></a>
                             <br/>               
 
-                            [<a href="#" onclick="toggleBib(event); return false;">bib</a>]
-                            [<a href="#" onclick="toggleAbstract(event); return false;">abstract</a>]
-                            
-                            <!-- Your HTML content -->
-                            
-                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                             <script>
-                                var bibClicked = false;
-                                var abstractClicked = false;
-                            
-                                function toggleBib(event) {
-                                  if (abstractClicked) {
-                                    event.preventDefault();
-                                    abstractClicked = false;
-                                    $('#bioinfo2021_abs').hide();
-                                  }
-                                  bibClicked = !bibClicked;
-                                  $('#bioinfo2021_bib').toggle();
-                                }
-                            
-                                function toggleAbstract(event) {
-                                  if (bibClicked) {
-                                    event.preventDefault();
-                                    bibClicked = false;
-                                    $('#bioinfo2021_bib').hide();
-                                  }
-                                  abstractClicked = !abstractClicked;
-                                  $('#bioinfo2021_abs').toggle();
-                                }
-                              </script>
+                                let bibShow = false;
+                                let abstractShow = false;
+
+                                const toggleBibClicked = (event) => {
+                                    bibShow = !bibShow;
+                                    console.log(`toggleBibClicked bibShow: ${bibShow}, event: ${event}`);                                
+                                   
+                                    if(bibShow === true) {
+                                        $('#bioinfo2021_bib').show();
+                                        $('#bioinfo2021_abs').hide();
+                                        abstractShow = false;
+                                    } else {
+                                        $('#bioinfo2021_bib').hide();
+                                    }
+                                    
+                                };
+
+                                const toggleAbstractClicked = (event) => {
+                                    abstractShow = !abstractShow;
+                                    console.log(`toggleAbstractClicked abstractShow: ${abstractShow}, event: ${event}`);
+                                    
+                                    if(abstractShow === true) {
+                                        $('#bioinfo2021_abs').show();
+                                        $('#bioinfo2021_bib').hide();
+                                        bibShow = false;
+                                    } else {
+                                        $('#bioinfo2021_abs').hide();
+                                    }
+                                };
+
+                            </script>
+
+                            [<a href="#" onclick="toggleBibClicked(event); return false;">bib</a>]
+                            [<a href="#" onclick="toggleAbstractClicked(event); return false;">abstract</a>]
                             [<a href="https://github.com/Mahim1997/wQFM-2020" target="_blank">code</a>]
+                            
                             <div id="bioinfo2021_abs" class="abstract" style="display:none;">
                                 <p>
                                     <b>Motivation: </b>
